@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    container_name: api-logger
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "8028:8028"
+    environment:
+      - PORT=8028
+      - APINAME=api-logger
+      - AMBIENTE=DEV
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 172.17.0.1:24224
+        tag: api-logger.logs
+networks:
+  default:
+    name: 
+      efk-network
+    external:
+      true

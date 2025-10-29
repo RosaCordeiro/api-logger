@@ -1,7 +1,6 @@
 import { LogLevelEnum } from "@/core/entities/log.entity";
-import { CreateLogDTO } from "@/presentation/dtos/log/CreateLogDTO";
-import { logger } from "@/shared/providers/logger/logger";
-
+import { CreateLogDTO } from "@/presentation/dtos/log/create-log.dto";
+import { logger } from "@/shared/providers/logger/logger.provider";
 
 export class CreateLogUseCase {
 	execute(logData: CreateLogDTO): Boolean {

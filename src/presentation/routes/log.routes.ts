@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { LogController } from "../controllers/LogController";
-import { CreateLogDTO } from "../dtos/log/CreateLogDTO";
+import { LogController } from "../controllers/log.controller";
+import { CreateLogDTO } from "../dtos/log/create-log.dto";
 import { validationDTOMidleware } from "@/shared/middlewares/validationDTOMidleware";
 
 const logRouter = Router();

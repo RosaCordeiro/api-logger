@@ -2,6 +2,7 @@ services:
   app:
     build: .
     container_name: api-logger
+    network_mode: bridge
     working_dir: /usr/src/app
     volumes:
       - ./:/usr/src/app
@@ -16,9 +17,3 @@ services:
       options:
         fluentd-address: 172.17.0.1:24224
         tag: api-logger.logs
-networks:
-  default:
-    name: 
-      efk-network
-    external:
-      true

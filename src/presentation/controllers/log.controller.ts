@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { CreateLogUseCase } from "@/core/useCases/logger/CreateLogUseCase";
-import { CreateLogDTO } from "../dtos/log/CreateLogDTO";
+import { CreateLogUseCase } from "@/core/useCases/logger/create-log.use-case";
+import { CreateLogDTO } from "../dtos/log/create-log.dto";
 
 export class LogController {
     async createLog(req: Request, res: Response) {

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { CreateLogUseCase } from "@/core/useCases/logger/create-log.use-case";
+import { CreateLogUseCase } from "@/core/application/useCases/logger/create-log.use-case";
 import { CreateLogDTO } from "../dtos/log/create-log.dto";
 
 export class LogController {

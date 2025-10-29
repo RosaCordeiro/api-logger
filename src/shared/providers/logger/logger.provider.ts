@@ -1,4 +1,4 @@
-import { LoggerProvider } from './LoggerProvider';
+import { LoggerProvider } from './create-logger.provider';
 
 export const logger = new LoggerProvider({
     pretty: process.env.NODE_ENV !== 'production',

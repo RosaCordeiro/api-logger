@@ -1,4 +1,4 @@
-import { LogLevelEnum } from "@/core/entities/log.entity";
+import { LogLevelEnum } from "@/core/domain/log/log.entity";
 import { CreateLogDTO } from "@/presentation/dtos/log/create-log.dto";
 import { logger } from "@/shared/providers/logger/logger.provider";
 

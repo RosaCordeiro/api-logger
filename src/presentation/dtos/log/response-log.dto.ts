@@ -1,4 +1,4 @@
-import { Log, TLogLevelEnum } from "@/core/entities/log.entity";
+import { Log, TLogLevelEnum } from "@/core/domain/log/log.entity";
 
 export class ResponseLogDTO {
     id?: string;

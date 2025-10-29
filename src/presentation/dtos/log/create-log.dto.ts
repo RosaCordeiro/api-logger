@@ -1,4 +1,4 @@
-import { LogLevelEnum } from '@/core/entities/log.entity';
+import { LogLevelEnum } from '@/core/domain/log/log.entity';
 import { Transform } from 'class-transformer';
 import { IsString, IsOptional, IsDate, MinLength, MaxLength, IsEnum } from 'class-validator';
 

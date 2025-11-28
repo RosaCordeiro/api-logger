@@ -4,10 +4,13 @@ import { router } from "../../presentation/routes";
 import express from "express"
 import "@/shared/container";
 import cors from 'cors';
+import { httpMetricsMiddleware } from "light-node-metrics"
+import { logger } from "@/shared/providers/logger/logger.provider";
 
 const app = express()
 
 app.use(express.json())
+app.use(httpMetricsMiddleware)
 app.use(cors());
 
 app.use((req, res, next) => {
@@ -27,15 +30,15 @@ app.use(router);
 const port = process.env.PORT
 
 process.on('uncaughtException', (err) => {
-    console.error('Erro não tratado:', err);
+    logger.error(`Erro não tratado:  ${err}`);
     return process.exit(1);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
-    console.error('Promise rejeitada sem catch:', reason);
+    logger.error(`Promise rejeitada sem catch: ${reason}`);
     return process.exit(1);
 });
 
 app.listen(port, () => {
-    console.log(`Listening on PORT ${port}`, 'PID:', process.pid)
+    logger.info(`Listening on PORT ${port}`)
 })

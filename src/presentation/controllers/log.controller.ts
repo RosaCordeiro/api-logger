@@ -19,7 +19,6 @@ export class LogController {
 
             res.status(201).send();
         } catch (error) {
-            console.log('caiu aqui')
             res.status(400).json({ error: error.message });
         }
     }

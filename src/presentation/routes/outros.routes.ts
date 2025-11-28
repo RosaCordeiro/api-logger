@@ -1,6 +1,7 @@
-import { metricsHandler } from './../../shared/providers/metrics/instrumentation';
+import { metricsHandler } from 'light-node-metrics';
 import { ItsAliveController } from "@/presentation/controllers/Its-alive.controller";
 import { Router } from "express";
+import { getLoggerLevel, loggerLevelHandler } from '@/shared/singletons/logger.singleton';
 
 const outrosRouter = Router();
 
@@ -14,6 +15,16 @@ outrosRouter.get(
 outrosRouter.get(
     "/metrics",
     metricsHandler
+)
+
+outrosRouter.post(
+    "/log-level",
+    loggerLevelHandler
+)
+
+outrosRouter.get(
+    "/actives-log-levels",
+    getLoggerLevel
 )
 
 export { outrosRouter };

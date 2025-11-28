@@ -4,6 +4,7 @@ services:
     container_name: api-logger
     network_mode: bridge
     working_dir: /usr/src/app
+    mem_limit: 512m
     volumes:
       - ./:/usr/src/app
     ports:
